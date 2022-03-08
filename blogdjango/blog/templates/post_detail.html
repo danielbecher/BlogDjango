@@ -1,15 +1,15 @@
 {% extends "blog/base.html" %}
 
-{% block title %} Meu Blog em 🐍  {%endblock%}
+{% block title %} {{ post.title}}  {% endblock %}
 
 {% block content %}
-    {% for post in post_list %}
     <article>
         <h2>{{ post.title }}</h2>
         <p class="date">
             Publicado em {{ post.created }} por {{ post.author }}
         </p>
-        {{ post.body|linebreaks|truncatewords:10}}
+        <p>
+            {{ post.body|linebreaks}}
+        </p>
     </article>
-    {%endfor%}
 {% endblock %} 
